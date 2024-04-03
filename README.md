@@ -9,6 +9,7 @@ This [Spring Boot](https://spring.io/projects/spring-boot) project is provided a
 Java 17 -- Java can be acquired using [SDKMAN!](https://sdkman.io/)
 
 ## Running the Application
+# Place yourself in the folder of the project
 
 Start the server using Gradle:
 
