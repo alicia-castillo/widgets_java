@@ -22,8 +22,9 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @Builder(toBuilder=true)
-public class Widget {
+public class Widget{
     private static final DecimalFormat df = new DecimalFormat("0.00");
+
 
   @Id
   @Column(unique=true)
@@ -37,8 +38,6 @@ public class Widget {
   @Column(name="price")
   @Size(min=1, max=20000)
   private Double price;
-  
-  
 
   public String getName(){
     return name;

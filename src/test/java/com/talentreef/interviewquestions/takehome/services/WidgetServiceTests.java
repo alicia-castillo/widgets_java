@@ -22,15 +22,30 @@ public class WidgetServiceTests {
   @InjectMocks
   private WidgetService widgetService;
 
-  /*@Test
+  @Test
   public void when_getAllWidgets_expect_findAllResult() throws Exception {
-    Widget widget = Widget.builder().name("Widgette Nielson").build();
+    //Widget widget = Widget.builder().name("Widgette Nielson").build();
+    Widget widget = new Widget();
+    widget.setName("Widgette Nielson");
     List<Widget> response = List.of(widget);
     when(widgetRepository.findAll()).thenReturn(response);
 
     List<Widget> result = widgetService.getAllWidgets();
 
     assertThat(result).isEqualTo(response);
-  }*/
+  }
+  
+  @Test
+  public void when_addWidget_expect_widget() throws Exception {
+      Widget widget = new Widget();
+      widget.setName("widgette Nielson");
+      widget.setDescription("this is a description");
+      widget.setPrice(23.334);
+      Widget response = widget;
+      when(widgetRepository.save(widget)).thenReturn(response);
+      Widget result = widgetService.addWidget(widget);
+      
+      assertThat(result).isEqualTo(response);
+  }
 
 }

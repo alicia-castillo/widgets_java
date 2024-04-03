@@ -44,9 +44,13 @@ public class WidgetControllerTests {
     mockMvc = MockMvcBuilders.standaloneSetup(widgetController).build();
   }
 
-  /*@Test
+  @Test
   public void when_getAllWidgets_expect_allWidgets() throws Exception {
-    Widget widget = Widget.builder().name("Widget von Hammersmark").build();
+    //Widget widget = Widget.builder().name("Widget von Hammersmark").build();
+    Widget widget = new Widget();
+    widget.setName("Widget von Hammersmark");
+    widget.setDescription("");
+    widget.setPrice(0.00);
     List<Widget> allWidgets = List.of(widget);
     when(widgetService.getAllWidgets()).thenReturn(allWidgets);
 
@@ -58,6 +62,6 @@ public class WidgetControllerTests {
     List<Widget> parsedResult = objectMapper.readValue(result.getResponse().getContentAsString(),
         new TypeReference<List<Widget>>(){});
     assertThat(parsedResult).isEqualTo(allWidgets);
-  }*/
+  }
 
 }
